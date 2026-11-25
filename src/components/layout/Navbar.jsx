@@ -1,0 +1,101 @@
+﻿import { useState } from "react";
+import { Menu, X, MessageCircle } from "lucide-react";
+
+const links = [
+  { label: "首页", href: "#home" },
+  { label: "我们的业务", href: "#services" },
+  { label: "合作优势", href: "#about" },
+  { label: "市场覆盖", href: "#global" },
+  { label: "关于我们", href: "#about" },
+  { label: "联系我们", href: "#contact" },
+];
+
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header className="absolute inset-x-0 top-0 z-50">
+      <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between gap-5 px-5 md:px-10 lg:px-16">
+        <a href="#home" className="flex shrink-0 items-center gap-3">
+          <img
+            src="/images/logo.jpeg"
+            alt="NAFEIZ"
+            className="h-11 w-11 rounded-md bg-white object-contain"
+          />
+          <div className="text-white">
+            <div className="text-[21px] font-bold leading-none tracking-wide">
+              NAFEIZ
+            </div>
+            <div className="mt-1 text-[9px] tracking-wide text-white/75">
+              Trade Co., Ltd.
+            </div>
+          </div>
+        </a>
+
+        <nav className="hidden items-center gap-5 xl:flex 2xl:gap-7">
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className={`relative py-3 text-[13px] font-semibold transition hover:text-[#62c5ff] ${
+                index === 0 ? "text-white" : "text-white/80"
+              }`}
+            >
+              {link.label}
+              {index === 0 && (
+                <span className="absolute bottom-0 left-0 h-[2px] w-6 bg-[#62c5ff]" />
+              )}
+            </a>
+          ))}
+        </nav>
+
+        <div className="hidden items-center gap-3 xl:flex">
+          <div className="flex items-center gap-2 rounded-full border border-white/35 px-4 py-2 text-xs text-white">
+            中文
+          </div>
+
+          <a
+            href="#contact"
+            className="flex items-center gap-2 rounded-full bg-[#1675e8] px-5 py-2.5 text-xs font-semibold text-white shadow-[0_6px_20px_rgba(0,110,255,0.25)] transition hover:bg-[#2596be]"
+          >
+            <MessageCircle size={16} />
+            通过微信洽谈
+          </a>
+        </div>
+
+        <button
+          type="button"
+          aria-label={menuOpen ? "关闭菜单" : "打开菜单"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="rounded-lg border border-white/30 p-2 text-white xl:hidden"
+        >
+          {menuOpen ? <X size={23} /> : <Menu size={23} />}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <nav className="mx-4 rounded-xl border border-white/15 bg-[#07172e]/95 p-5 shadow-xl backdrop-blur-xl xl:hidden">
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="block border-b border-white/10 py-3 text-sm text-white"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="mt-4 block rounded-full bg-[#1675e8] px-5 py-3 text-center text-sm text-white"
+          >
+            通过微信洽谈
+          </a>
+        </nav>
+      )}
+    </header>
+  );
+}
+

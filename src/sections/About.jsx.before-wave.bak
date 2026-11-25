@@ -1,0 +1,87 @@
+﻿import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const highlights = [
+  { title: "中国制造", label: "关注优质制造资源" },
+  { title: "国际贸易", label: "探索跨境贸易机会" },
+  { title: "供应链协作", label: "重视高效沟通与协调" },
+  { title: "长期合作", label: "致力于建立互信关系" },
+];
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="relative z-20 -mt-[65px] bg-transparent pb-5 lg:-mt-[95px]"
+    >
+      <div className="mx-auto max-w-[1440px] px-4 md:px-8 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7 }}
+          className="relative overflow-hidden rounded-[40px] bg-gradient-to-br from-white via-[#f6faff] to-[#e8f3ff] shadow-[0_20px_70px_rgba(0,0,0,0.18)] lg:rounded-[65px]"
+        >
+          <div className="grid min-h-[350px] lg:grid-cols-[1.15fr_1.25fr_0.55fr]">
+            {/* Left: text */}
+            <div className="relative z-10 flex flex-col justify-center px-7 py-12 md:px-12 lg:px-14">
+              <p className="mb-4 text-xs font-bold tracking-[0.15em] text-[#1675d1]">
+                关于 NAFEIZ
+              </p>
+
+              <h2 className="text-3xl font-extrabold leading-[1.3] text-[#071a36] md:text-4xl">
+                专业的国际贸易与
+                <br />
+                供应链合作伙伴
+              </h2>
+
+              <p className="mt-5 max-w-[440px] text-[13px] leading-7 text-slate-600">
+                NAFEIZ Trade 致力于与中国制造商和供应商建立合作联系，
+                关注产品采购、跨境贸易及供应链协作，
+                共同探索国际市场的商业机会。
+              </p>
+
+              <a
+                href="#services"
+                className="mt-6 inline-flex w-fit items-center gap-3 rounded-full border border-[#2375bc] px-5 py-2.5 text-sm font-bold text-[#1769b4] transition hover:bg-[#1769b4] hover:text-white"
+              >
+                了解 NAFEIZ
+                <ArrowRight size={16} />
+              </a>
+            </div>
+
+            {/* Center: architectural photo */}
+            <div className="relative min-h-[320px] overflow-hidden rounded-[35px] lg:my-3 lg:rounded-[70px_24px_70px_24px]">
+              <img
+                src="/images/about.png"
+                alt="国际商务建筑概念图"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06142b]/20 to-transparent" />
+            </div>
+
+            {/* Right: informational column */}
+            <div className="grid grid-cols-2 gap-0 px-5 py-7 sm:grid-cols-4 lg:grid-cols-1 lg:px-7 lg:py-8">
+              {highlights.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`flex flex-col justify-center border-l-2 border-[#a4c5e5] px-4 py-3 ${
+                    index !== 0 ? "lg:border-t lg:border-t-slate-200" : ""
+                  }`}
+                >
+                  <p className="text-lg font-extrabold text-[#0d2144] lg:text-xl">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-5 text-slate-500">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

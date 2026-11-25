@@ -1,0 +1,31 @@
+/* NAFEIZ global markets: editorial carousel, no globe or external imagery. */
+.na-markets{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 88% 0%,#173b5b 0%,#102a44 35%,#09192d 77%);color:#fff;scroll-margin-top:84px}
+.na-markets::before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 69px,#81caff0b 70px,transparent 71px 140px);mask-image:linear-gradient(90deg,transparent 25%,#000 100%)}
+.na-market-inner{width:min(100%,1440px);margin:auto;padding:44px clamp(24px,4vw,68px) 35px}
+.na-market-content{min-width:0;position:relative}
+.na-market-header{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-bottom:25px;border-bottom:1px solid #75b8de29;padding-bottom:21px}
+.na-market-intro{min-width:0}
+.na-market-kicker{display:flex;align-items:center;gap:12px;color:#68c9ff;font-size:13px;font-weight:700;margin-bottom:10px}
+.na-market-kicker::before{content:'';width:3px;height:20px;background:#40b7f5}
+.na-market-kicker::after{content:'';height:1px;width:44px;background:#3782ae}
+.na-market-content h2{font-size:clamp(25px,2.6vw,38px);font-weight:800;line-height:1.25;margin:0}
+.na-market-description{font-size:13px;line-height:1.85;color:#c4d8e9;margin:12px 0 0;max-width:760px}
+.na-market-summary{display:flex;align-items:center;gap:16px;flex-shrink:0;padding-left:24px;border-left:1px solid #70b8e047}
+.na-market-summary-number{font-size:clamp(44px,5vw,72px);line-height:1;font-weight:750;letter-spacing:-.065em;color:#8bd5ff;font-variant-numeric:tabular-nums}
+.na-market-summary>div{display:grid;gap:4px}.na-market-summary strong{font-size:14px;font-weight:700;white-space:nowrap}.na-market-summary>div>span{font-size:10px;letter-spacing:.17em;color:#93b4d0}
+.na-market-stage{min-width:0;overflow:hidden;padding:10px 12px 4px;margin:0 -12px}
+.na-market-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.1vw,32px);align-items:start}
+.na-market-card{min-width:0;text-align:center;padding:0 6px}
+.na-market-tile{height:clamp(112px,11vw,156px);border:1px solid #75b8de66;border-radius:13px;background:linear-gradient(145deg,#254e6d,#132f49 70%,#0c253e);transform:skewX(-7deg);overflow:hidden;display:grid;place-items:center;box-shadow:0 10px 22px #020f233d;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative}
+.na-market-tile::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,#c7f3ff12,transparent 45%)}
+.na-market-index{position:absolute;top:10px;left:14px;color:#87b2ce;font-size:10px;letter-spacing:.08em;font-variant-numeric:tabular-nums;transform:skewX(7deg)}
+.na-market-card:hover .na-market-tile{transform:translateY(-5px) skewX(-7deg);border-color:#7cd8ff;box-shadow:0 12px 30px #249cfb40}
+.na-market-flag{width:66%;max-width:142px;height:64%;display:grid;place-items:center;transform:skewX(7deg);position:relative;z-index:1}
+.na-market-flag img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 9px #03102399)}
+.na-market-label{margin-top:12px;min-height:52px}.na-market-card h3{margin:0 0 5px;font-size:16px;line-height:1.3;font-weight:750;color:#fff}.na-market-card p{margin:0;font-size:12px;line-height:1.4;color:#a9c4d9;overflow-wrap:anywhere}
+.na-market-controls{display:flex;align-items:center;gap:14px;margin-top:12px;padding-top:13px;border-top:1px solid #75b8de29;justify-content:space-between}
+.na-market-dots{display:flex;gap:4px;align-items:center}.na-market-dots button{width:30px;height:30px;display:grid;place-items:center;background:none;border:0;cursor:pointer;padding:0}.na-market-dots button span{height:4px;width:16px;border-radius:9px;background:#55728c;transition:width .25s,background .25s}.na-market-dots .is-current span{width:27px;background:#57c7ff}
+.na-market-counter{margin-left:auto;font-size:12px;color:#a5c3dc;font-variant-numeric:tabular-nums}.na-market-arrows{display:flex;gap:7px}.na-market-arrows button{width:38px;height:38px;border:1px solid #638ba866;border-radius:50%;background:#153856;color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}.na-market-arrows button:hover{background:#176fce;border-color:#69c9ff}.na-market-controls button:focus-visible{outline:2px solid #67caff;outline-offset:3px}
+@media(max-width:700px){.na-market-inner{padding:28px 22px 27px}.na-market-header{gap:14px;align-items:flex-start;margin-bottom:17px;padding-bottom:15px}.na-market-summary{padding-left:12px;gap:6px;flex-direction:column;align-items:flex-start}.na-market-summary-number{font-size:39px}.na-market-summary strong{font-size:11px}.na-market-summary>div>span{font-size:8px}.na-market-content h2{font-size:24px}.na-market-description{font-size:12px}.na-market-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}.na-market-tile{height:112px}.na-market-label{min-height:43px;margin-top:9px}.na-market-card h3{font-size:14px}.na-market-card p{font-size:11px}.na-market-controls{gap:8px;margin-top:8px}.na-market-arrows button{width:34px;height:34px}.na-market-dots{gap:1px}.na-market-dots button{width:24px}.na-market-dots .is-current span{width:21px}}
+@media(max-width:360px){.na-market-header{flex-wrap:wrap}.na-market-summary{flex-direction:row;align-items:center;padding-left:0;border:0}.na-market-summary-number{font-size:31px}.na-market-summary>div{gap:1px}.na-market-controls{gap:5px}}
+@media(prefers-reduced-motion:reduce){.na-market-tile,.na-market-dots button span,.na-market-arrows button{transition:none}.na-market-card:hover .na-market-tile{transform:skewX(-7deg)}}

@@ -1,0 +1,99 @@
+﻿import { ArrowRight } from "lucide-react";
+
+const highlights = [
+  { title: "中国制造", label: "关注优质制造资源" },
+  { title: "国际贸易", label: "探索跨境贸易机会" },
+  { title: "供应链协作", label: "重视高效沟通与协调" },
+  { title: "长期合作", label: "致力于建立互信关系" },
+];
+
+export default function About() {
+  return (
+    <section id="about" className="relative z-20 -mt-[145px]">
+      <div className="relative mx-auto h-[330px] w-[96%] max-w-[1360px]">
+        <svg
+          viewBox="0 0 1360 330"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="aboutShapeFill" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#e8f3ff" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="
+              M 85 35
+              C 170 12 280 30 400 32
+              C 525 34 600 18 695 10
+              C 825 -5 925 25 1040 30
+              C 1170 35 1265 10 1360 0
+              L 1360 330
+              L 90 330
+              C 25 330 0 295 0 245
+              L 0 140
+              C 0 85 25 48 85 35
+              Z
+            "
+            fill="url(#aboutShapeFill)"
+          />
+        </svg>
+
+        <div className="relative grid h-full grid-cols-[39%_41%_20%] px-[3.5%] pb-3 pt-[45px]">
+          <div className="flex flex-col justify-center pr-6">
+            <p className="mb-3 text-[11px] font-bold tracking-wider text-[#1675d1]">
+              关于 NAFEIZ
+            </p>
+
+            <h2 className="text-[clamp(22px,2.1vw,31px)] font-extrabold leading-[1.25] text-[#071a36]">
+              专业的国际贸易与
+              <br />
+              供应链合作伙伴
+            </h2>
+
+            <p className="mt-3 max-w-[420px] text-[11px] leading-[1.9] text-[#52647c]">
+              NAFEIZ Trade 致力于与中国制造商和供应商建立合作联系，
+              关注产品采购、跨境贸易及供应链协作，
+              共同探索国际市场的商业机会。
+            </p>
+
+            <a
+              href="#services"
+              className="mt-4 inline-flex w-fit items-center gap-3 rounded-full border border-[#2375bc] px-5 py-2 text-[11px] font-bold text-[#1769b4]"
+            >
+              了解 NAFEIZ
+              <ArrowRight size={15} />
+            </a>
+          </div>
+
+          <div className="relative h-full overflow-hidden rounded-[95px_38px_28px_28px]">
+            <img
+              src="/images/about.png"
+              alt="国际商务建筑概念图"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+
+          <div className="grid grid-rows-4 py-2 pl-5">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="flex flex-col justify-center border-l-2 border-[#a7c6e7] px-3"
+              >
+                <strong className="text-[18px] font-extrabold text-[#0d2144]">
+                  {item.title}
+                </strong>
+                <span className="mt-1 text-[10px] text-[#60758d]">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

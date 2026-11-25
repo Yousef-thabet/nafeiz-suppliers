@@ -1,0 +1,23 @@
+﻿/*
+  NAFEIZ Suppliers
+  Hero + About layout configuration
+
+  Reference: user-provided original design only.
+  These are initial layout parameters,
+  not a verified pixel-perfect match.
+*/
+
+:root {
+  --na-layout-max: 1440px;
+  --na-hero-height: 690px;
+  --na-about-height: 340px;
+  --na-about-overlap: 145px;
+
+  --na-about-left-column: 38%;
+  --na-about-image-column: 42%;
+  --na-about-right-column: 20%;
+
+  --na-navy: #0d2144;
+  --na-blue: #2596be;
+  --na-white: #ffffff;
+}

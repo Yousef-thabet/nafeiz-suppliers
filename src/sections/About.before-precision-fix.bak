@@ -1,0 +1,124 @@
+﻿import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
+const highlights = [
+  { title: "中国制造", label: "关注优质制造资源" },
+  { title: "国际贸易", label: "探索跨境贸易机会" },
+  { title: "供应链协作", label: "重视高效沟通与协调" },
+  { title: "长期合作", label: "致力于建立互信关系" },
+];
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="relative z-20 -mt-[90px] bg-transparent lg:-mt-[155px]"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.55 }}
+        className="relative mx-auto max-w-[1440px] px-4 md:px-7 lg:px-[3.5%]"
+      >
+        {/* One integrated organic panel */}
+        <div className="relative isolate min-h-[430px] lg:h-[365px] lg:min-h-0">
+          {/* Background shape is the actual panel */}
+          <svg
+            viewBox="0 0 1360 365"
+            preserveAspectRatio="none"
+            className="absolute inset-0 -z-10 h-full w-full drop-shadow-[0_12px_20px_rgba(0,0,0,0.12)]"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="aboutPanelGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="65%" stopColor="#f6faff" />
+                <stop offset="100%" stopColor="#e7f2ff" />
+              </linearGradient>
+            </defs>
+
+            <path
+              d="
+                M 95 28
+                C 210 10, 355 48, 495 44
+                C 660 40, 835 5, 1020 12
+                C 1150 17, 1255 35, 1320 5
+                Q 1360 -5, 1360 40
+                L 1360 365
+                L 90 365
+                Q 0 365, 0 282
+                L 0 132
+                Q 0 43, 95 28
+                Z
+              "
+              fill="url(#aboutPanelGradient)"
+            />
+          </svg>
+
+          {/* Reference-style three-column composition */}
+          <div className="relative grid h-full items-center gap-3 px-7 pb-5 pt-[70px] md:px-10 lg:grid-cols-[37%_43%_20%] lg:gap-0 lg:px-[3%] lg:pb-[18px] lg:pt-[52px]">
+            {/* Left copy */}
+            <div className="relative z-10 flex flex-col justify-center pr-3 lg:pr-6">
+              <p className="mb-3 text-[11px] font-bold tracking-[0.1em] text-[#1675d1]">
+                关于 NAFEIZ
+              </p>
+
+              <h2 className="text-[27px] font-extrabold leading-[1.25] text-[#071a36] md:text-[30px] lg:text-[clamp(23px,2.2vw,34px)]">
+                专业的国际贸易与
+                <br />
+                供应链合作伙伴
+              </h2>
+
+              <p className="mt-3 max-w-[395px] text-[11px] leading-[1.8] text-[#485d75] lg:text-[12px]">
+                NAFEIZ Trade 致力于与中国制造商和供应商建立合作联系，
+                关注产品采购、跨境贸易及供应链协作，
+                共同探索国际市场的商业机会。
+              </p>
+
+              <a
+                href="#services"
+                className="mt-4 inline-flex w-fit items-center gap-3 rounded-full border border-[#2375bc] px-5 py-2 text-[12px] font-bold text-[#1769b4] transition hover:bg-[#1769b4] hover:text-white"
+              >
+                了解 NAFEIZ
+                <ArrowRight size={15} />
+              </a>
+            </div>
+
+            {/* Center image: integrated into the composition */}
+            <div
+              className="relative min-h-[240px] overflow-hidden lg:h-full lg:min-h-0"
+              style={{
+                borderRadius: "80px 40px 42px 28px / 95px 42px 40px 28px",
+              }}
+            >
+              <img
+                src="/images/about.png"
+                alt="国际商务建筑概念图"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+              />
+            </div>
+
+            {/* Right vertical information rail */}
+            <div className="grid grid-cols-2 gap-0 pl-3 sm:grid-cols-4 lg:h-full lg:grid-cols-1 lg:pl-5">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex flex-col justify-center border-l-2 border-[#9abde4] px-3 py-2"
+                >
+                  <p className="text-[16px] font-extrabold leading-tight text-[#0d2144] lg:text-[19px]">
+                    {item.title}
+                  </p>
+                  <p className="mt-1 text-[10px] leading-4 text-[#60758d]">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}

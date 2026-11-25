@@ -1,0 +1,326 @@
+﻿import { ArrowRight } from "lucide-react";
+
+const highlights = [
+  { title: "中国制造", label: "关注优质制造资源" },
+  { title: "国际贸易", label: "探索跨境贸易机会" },
+  { title: "供应链协作", label: "重视高效沟通与协调" },
+  { title: "长期合作", label: "致力于建立互信关系" },
+];
+
+function AboutContent() {
+  return (
+    <>
+      <div className="about-copy">
+        <p className="about-eyebrow">关于 NAFEIZ</p>
+
+        <h2 className="about-heading">
+          专业的国际贸易与
+          <br />
+          供应链合作伙伴
+        </h2>
+
+        <p className="about-description">
+          NAFEIZ Trade 致力于与中国制造商和供应商建立合作联系，
+          关注产品采购、跨境贸易及供应链协作，
+          共同探索国际市场的商业机会。
+        </p>
+
+        <a className="about-button" href="#services">
+          了解 NAFEIZ
+          <ArrowRight size={15} />
+        </a>
+      </div>
+
+      <div className="about-photo">
+        <img
+          src="/images/about.png"
+          alt="国际商务建筑概念图"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="about-highlights">
+        {highlights.map((item) => (
+          <div className="about-highlight" key={item.title}>
+            <strong>{item.title}</strong>
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default function About() {
+  return (
+    <section id="about" className="about-section">
+      <div className="about-panel">
+        <svg
+          className="about-panel-shape"
+          viewBox="0 0 1360 340"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient
+              id="aboutPreciseFill"
+              x1="0"
+              y1="0"
+              x2="1"
+              y2="0.4"
+            >
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="67%" stopColor="#f9fbff" />
+              <stop offset="100%" stopColor="#e9f3ff" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="
+              M 90 28
+              C 170 7, 265 21, 350 26
+              C 460 33, 570 26, 655 10
+              C 780 -12, 870 4, 955 18
+              C 1085 39, 1210 10, 1360 0
+              L 1360 340
+              L 86 340
+              C 32 340, 5 312, 5 267
+              C 5 217, 10 160, 24 111
+              C 36 69, 52 38, 90 28
+              Z
+            "
+            fill="url(#aboutPreciseFill)"
+          />
+        </svg>
+
+        <div className="about-content">
+          <AboutContent />
+        </div>
+      </div>
+
+      <style>{`
+        .about-section {
+          position: relative;
+          z-index: 20;
+          margin-top: -122px;
+          background: transparent;
+          color: #0d2144;
+        }
+
+        .about-panel {
+          position: relative;
+          width: min(96%, 1360px);
+          height: 340px;
+          margin-inline: auto;
+          isolation: isolate;
+        }
+
+        .about-panel-shape {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          filter: drop-shadow(0 9px 14px rgba(0, 14, 40, .13));
+        }
+
+        .about-content {
+          position: relative;
+          display: grid;
+          grid-template-columns: 39% 41% 20%;
+          height: 100%;
+          padding: 42px 32px 13px 48px;
+          align-items: stretch;
+        }
+
+        .about-copy {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-width: 0;
+          padding: 5px 23px 4px 0;
+        }
+
+        .about-eyebrow {
+          color: #1675d1;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: .09em;
+          margin-bottom: 11px;
+        }
+
+        .about-heading {
+          font-size: clamp(22px, 2.05vw, 31px);
+          line-height: 1.24;
+          letter-spacing: -.02em;
+          font-weight: 800;
+          color: #071a36;
+        }
+
+        .about-description {
+          margin-top: 12px;
+          max-width: 420px;
+          font-size: 11px;
+          line-height: 1.85;
+          color: #52647c;
+        }
+
+        .about-button {
+          margin-top: 15px;
+          display: inline-flex;
+          align-items: center;
+          align-self: flex-start;
+          gap: 13px;
+          padding: 8px 18px;
+          border: 1px solid #2375bc;
+          border-radius: 999px;
+          color: #1769b4;
+          font-size: 11px;
+          font-weight: 800;
+          text-decoration: none;
+          transition: background .2s, color .2s;
+        }
+
+        .about-button:hover {
+          background: #1769b4;
+          color: #fff;
+        }
+
+        .about-photo {
+          position: relative;
+          height: calc(100% + 14px);
+          margin-top: -14px;
+          overflow: hidden;
+          border-radius: 100px 40px 30px 25px /
+                         90px 40px 30px 25px;
+        }
+
+        .about-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
+
+        .about-highlights {
+          display: grid;
+          grid-template-rows: repeat(4, minmax(0, 1fr));
+          padding: 6px 0 8px 20px;
+        }
+
+        .about-highlight {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-width: 0;
+          padding: 3px 9px 3px 13px;
+          border-left: 1.5px solid #a7c6e7;
+        }
+
+        .about-highlight strong {
+          color: #0d2144;
+          font-size: clamp(15px, 1.4vw, 20px);
+          line-height: 1.2;
+          font-weight: 800;
+        }
+
+        .about-highlight span {
+          margin-top: 4px;
+          color: #60758d;
+          font-size: 10px;
+          line-height: 1.45;
+        }
+
+        @media (min-width: 1440px) {
+          .about-heading {
+            font-size: 30px;
+          }
+        }
+
+        @media (max-width: 1023px) {
+          .about-section {
+            margin-top: -65px;
+          }
+
+          .about-panel {
+            width: calc(100% - 32px);
+            height: auto;
+            background: linear-gradient(120deg, #fff, #e9f3ff);
+            border-radius: 42px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,14,40,.13);
+          }
+
+          .about-panel-shape {
+            display: none;
+          }
+
+          .about-content {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 20px;
+            padding: 42px 25px 24px;
+          }
+
+          .about-copy {
+            padding: 0;
+          }
+
+          .about-photo {
+            height: 310px;
+            margin: 0;
+            border-radius: 55px 22px 35px 22px;
+          }
+
+          .about-highlights {
+            grid-column: 1 / -1;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-rows: auto;
+            padding: 8px 0;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .about-section {
+            margin-top: -40px;
+          }
+
+          .about-panel {
+            width: calc(100% - 20px);
+            border-radius: 30px;
+          }
+
+          .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 35px 20px 24px;
+          }
+
+          .about-heading {
+            font-size: 25px;
+          }
+
+          .about-description {
+            font-size: 12px;
+          }
+
+          .about-photo {
+            height: 240px;
+            border-radius: 45px 20px 30px 20px;
+          }
+
+          .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 4px;
+          }
+
+          .about-highlight strong {
+            font-size: 16px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
